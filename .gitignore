@@ -1,0 +1,23 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# local env / secrets
+.env
+.env.local
+.env.*.local
+
+# editor & OS
+.DS_Store
+Thumbs.db
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# claude local config (not needed in repo)
+.claude/

@@ -276,7 +276,7 @@ const BURDEN_TIP = (
     Employer-side payroll taxes & mandatory social contributions.{' '}
     <span className="text-slate-500">Sources:</span>{' '}
     <a href="https://www.oecd.org/tax/taxing-wages-20725124.htm" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">OECD Taxing Wages</a>,{' '}
-    <a href="https://kpmg.com/xx/en/home/insights/2021/09/employer-social-security-rates.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">KPMG Social Security</a>.{' '}
+    <a href="https://kpmg.com/gh/en/home/services/tax/tax-tools-and-resources/tax-rates-online/social-security-employer-tax-rates-table.html" target="_blank" rel="noopener noreferrer" className="text-blue-400 underline hover:text-blue-300">KPMG Social Security</a>.{' '}
     <span className="text-amber-400/80">Override</span> with your actual rate if known.
   </span>
 );

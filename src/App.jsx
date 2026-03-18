@@ -388,6 +388,7 @@ function ModeToggle({ value, opts, onChange, small = false }) {
 // Overrideable percentage input (e.g. employer burden %)
 function OverridePct({ value, onChange, defaultVal, label, tip }) {
   const isChanged = Math.abs(value - defaultVal) > 0.05;
+  const [raw, setRaw] = useState(null); // local string while focused
   return (
     <div>
       {label && (
@@ -395,15 +396,26 @@ function OverridePct({ value, onChange, defaultVal, label, tip }) {
           <label className="text-[10px] uppercase text-slate-500 font-bold tracking-wider flex items-center gap-0.5">
             {label}{tip && <InfoTip>{tip}</InfoTip>}
           </label>
-          <button onClick={() => onChange(defaultVal)} title="Reset to country default"
+          <button onClick={() => { setRaw(null); onChange(defaultVal); }} title="Reset to country default"
             className={`transition-colors ${isChanged ? 'text-amber-400 hover:text-amber-300' : 'text-slate-700 hover:text-slate-500 cursor-default pointer-events-none'}`}>
             <RotateCcw className="w-3 h-3" />
           </button>
         </div>
       )}
       <div className="relative">
-        <input type="number" min={0} max={100} step={0.1} value={value.toFixed(1)}
-          onChange={e => onChange(parseFloat(e.target.value) || 0)}
+        <input type="text" inputMode="decimal"
+          value={raw !== null ? raw : value.toFixed(1)}
+          onFocus={() => setRaw(value.toFixed(1))}
+          onChange={e => {
+            setRaw(e.target.value);
+            const v = parseFloat(e.target.value);
+            if (!isNaN(v) && v >= 0 && v <= 100) onChange(v);
+          }}
+          onBlur={() => {
+            const v = parseFloat(raw ?? '');
+            onChange(isNaN(v) ? defaultVal : Math.min(100, Math.max(0, v)));
+            setRaw(null);
+          }}
           className={`w-full bg-space-900 border rounded-lg py-2 px-3 pr-7 text-sm font-mono outline-none transition-all
             ${isChanged ? 'border-amber-500/50 text-amber-300' : 'border-slate-700 text-slate-300 hover:border-slate-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20'}`}
         />

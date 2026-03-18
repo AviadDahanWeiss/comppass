@@ -3,7 +3,7 @@ import {
   Globe, ArrowRight, RefreshCw, Calculator, CheckCircle,
   TrendingUp, Briefcase, MapPin, ChevronDown, Sparkles,
   Plane, BarChart3, Building2, Search, Info, ExternalLink,
-  DollarSign, Link, Check
+  DollarSign, Link, Check, RotateCcw
 } from 'lucide-react';
 
 // ---------------------------------------------------------------------------
@@ -156,9 +156,20 @@ const COUNTRIES = [
   { id:'BI', name:'Burundi',                iso:'BI', lat: -3.4, lng:  30.0, burdenRate:0.080, fixedBenefits:  50, currency:'BIF', symbol:'Fr',  flag:'🇧🇮' },
   { id:'GH', name:'Ghana',                  iso:'GH', lat:  7.9, lng:  -1.0, burdenRate:0.130, fixedBenefits: 120, currency:'GHS', symbol:'₵',   flag:'🇬🇭' },
   { id:'NG', name:'Nigeria',                iso:'NG', lat:  9.1, lng:   8.7, burdenRate:0.120, fixedBenefits: 150, currency:'NGN', symbol:'₦',   flag:'🇳🇬' },
+  { id:'MR', name:'Mauritania',              iso:'MR', lat: 20.3, lng: -10.9, burdenRate:0.140, fixedBenefits:  80, currency:'MRU', symbol:'UM',  flag:'🇲🇷' },
+  { id:'ML', name:'Mali',                   iso:'ML', lat: 17.6, lng:  -4.0, burdenRate:0.180, fixedBenefits:  80, currency:'XOF', symbol:'CFA', flag:'🇲🇱' },
   { id:'SN', name:'Senegal',                iso:'SN', lat: 14.5, lng: -14.5, burdenRate:0.200, fixedBenefits: 150, currency:'XOF', symbol:'CFA', flag:'🇸🇳' },
+  { id:'GW', name:'Guinea-Bissau',          iso:'GW', lat: 11.8, lng: -15.2, burdenRate:0.140, fixedBenefits:  60, currency:'XOF', symbol:'CFA', flag:'🇬🇼' },
+  { id:'BF', name:'Burkina Faso',           iso:'BF', lat: 12.4, lng:  -1.6, burdenRate:0.160, fixedBenefits:  80, currency:'XOF', symbol:'CFA', flag:'🇧🇫' },
+  { id:'NE', name:'Niger',                  iso:'NE', lat: 17.6, lng:   8.1, burdenRate:0.170, fixedBenefits:  70, currency:'XOF', symbol:'CFA', flag:'🇳🇪' },
+  { id:'TG', name:'Togo',                   iso:'TG', lat:  8.6, lng:   0.8, burdenRate:0.175, fixedBenefits:  80, currency:'XOF', symbol:'CFA', flag:'🇹🇬' },
+  { id:'BJ', name:'Benin',                  iso:'BJ', lat:  9.3, lng:   2.3, burdenRate:0.154, fixedBenefits:  80, currency:'XOF', symbol:'CFA', flag:'🇧🇯' },
   { id:'CI', name:"Côte d'Ivoire",          iso:'CI', lat:  7.5, lng:  -5.5, burdenRate:0.200, fixedBenefits: 120, currency:'XOF', symbol:'CFA', flag:'🇨🇮' },
   { id:'CM', name:'Cameroon',               iso:'CM', lat:  4.0, lng:  12.4, burdenRate:0.185, fixedBenefits: 100, currency:'XAF', symbol:'CFA', flag:'🇨🇲' },
+  { id:'TD', name:'Chad',                   iso:'TD', lat: 15.5, lng:  18.7, burdenRate:0.160, fixedBenefits:  70, currency:'XAF', symbol:'CFA', flag:'🇹🇩' },
+  { id:'CF', name:'Central African Republic',iso:'CF',lat:  6.6, lng:  20.9, burdenRate:0.180, fixedBenefits:  60, currency:'XAF', symbol:'CFA', flag:'🇨🇫' },
+  { id:'GA', name:'Gabon',                  iso:'GA', lat: -0.8, lng:  11.6, burdenRate:0.200, fixedBenefits: 150, currency:'XAF', symbol:'CFA', flag:'🇬🇦' },
+  { id:'GQ', name:'Equatorial Guinea',      iso:'GQ', lat:  1.7, lng:  10.3, burdenRate:0.215, fixedBenefits: 120, currency:'XAF', symbol:'CFA', flag:'🇬🇶' },
   { id:'GN', name:'Guinea',                 iso:'GN', lat: 11.0, lng: -10.9, burdenRate:0.180, fixedBenefits:  80, currency:'GNF', symbol:'Fr',  flag:'🇬🇳' },
   { id:'GM', name:'Gambia',                 iso:'GM', lat: 13.4, lng: -15.3, burdenRate:0.100, fixedBenefits:  60, currency:'GMD', symbol:'D',   flag:'🇬🇲' },
   { id:'SL', name:'Sierra Leone',           iso:'SL', lat:  8.5, lng: -11.8, burdenRate:0.100, fixedBenefits:  60, currency:'SLL', symbol:'Le',  flag:'🇸🇱' },
@@ -181,6 +192,8 @@ const COUNTRIES = [
   { id:'MG', name:'Madagascar',             iso:'MG', lat:-18.8, lng:  46.9, burdenRate:0.130, fixedBenefits:  80, currency:'MGA', symbol:'Ar',  flag:'🇲🇬' },
   { id:'MU', name:'Mauritius',              iso:'MU', lat:-20.3, lng:  57.6, burdenRate:0.060, fixedBenefits: 300, currency:'MUR', symbol:'Rs',  flag:'🇲🇺' },
   { id:'SC', name:'Seychelles',             iso:'SC', lat: -4.7, lng:  55.5, burdenRate:0.050, fixedBenefits: 400, currency:'SCR', symbol:'Rs',  flag:'🇸🇨' },
+  // ── Russia ──
+  { id:'RU', name:'Russia',                 iso:'RU', lat: 61.5, lng:  90.0, burdenRate:0.300, fixedBenefits: 600, currency:'RUB', symbol:'₽',   flag:'🇷🇺' },
   // ── Central Asia ──
   { id:'KZ', name:'Kazakhstan',             iso:'KZ', lat: 48.0, lng:  66.9, burdenRate:0.110, fixedBenefits: 300, currency:'KZT', symbol:'₸',   flag:'🇰🇿' },
   { id:'UZ', name:'Uzbekistan',             iso:'UZ', lat: 41.4, lng:  64.6, burdenRate:0.250, fixedBenefits: 100, currency:'UZS', symbol:'soʻm',flag:'🇺🇿' },
@@ -218,6 +231,8 @@ const COUNTRIES = [
   { id:'NZ', name:'New Zealand',            iso:'NZ', lat:-40.9, lng: 172.7, burdenRate:0.040, fixedBenefits: 300, currency:'NZD', symbol:'NZ$', flag:'🇳🇿' },
   { id:'PG', name:'Papua New Guinea',       iso:'PG', lat: -6.3, lng: 143.9, burdenRate:0.100, fixedBenefits: 150, currency:'PGK', symbol:'K',   flag:'🇵🇬' },
   { id:'FJ', name:'Fiji',                   iso:'FJ', lat:-17.7, lng: 178.1, burdenRate:0.080, fixedBenefits: 150, currency:'FJD', symbol:'FJ$', flag:'🇫🇯' },
+  { id:'SB', name:'Solomon Islands',        iso:'SB', lat: -9.6, lng: 160.2, burdenRate:0.075, fixedBenefits: 100, currency:'SBD', symbol:'$',   flag:'🇸🇧' },
+  { id:'VU', name:'Vanuatu',                iso:'VU', lat:-15.4, lng: 166.9, burdenRate:0.040, fixedBenefits:  80, currency:'VUV', symbol:'Vt',  flag:'🇻🇺' },
   { id:'TL', name:'Timor-Leste',            iso:'TL', lat: -8.9, lng: 125.7, burdenRate:0.030, fixedBenefits:  80, currency:'USD', symbol:'$',   flag:'🇹🇱' },
   { id:'BN', name:'Brunei',                 iso:'BN', lat:  4.5, lng: 114.7, burdenRate:0.100, fixedBenefits: 400, currency:'BND', symbol:'$',   flag:'🇧🇳' },
   { id:'KP', name:'North Korea',            iso:'KP', lat: 40.3, lng: 127.5, burdenRate:0.200, fixedBenefits:  80, currency:'KPW', symbol:'₩',   flag:'🇰🇵' },
@@ -380,10 +395,10 @@ function OverridePct({ value, onChange, defaultVal, label, tip }) {
           <label className="text-[10px] uppercase text-slate-500 font-bold tracking-wider flex items-center gap-0.5">
             {label}{tip && <InfoTip>{tip}</InfoTip>}
           </label>
-          {isChanged && (
-            <button onClick={() => onChange(defaultVal)} title="Reset to country default"
-              className="text-[10px] text-slate-600 hover:text-amber-400 transition-colors">↺ reset</button>
-          )}
+          <button onClick={() => onChange(defaultVal)} title="Reset to country default"
+            className={`transition-colors ${isChanged ? 'text-amber-400 hover:text-amber-300' : 'text-slate-700 hover:text-slate-500 cursor-default pointer-events-none'}`}>
+            <RotateCcw className="w-3 h-3" />
+          </button>
         </div>
       )}
       <div className="relative">
@@ -408,10 +423,10 @@ function OverrideAmt({ value, onChange, defaultVal, symbol, label, tip }) {
           <label className="text-[10px] uppercase text-slate-500 font-bold tracking-wider flex items-center gap-0.5">
             {label}{tip && <InfoTip>{tip}</InfoTip>}
           </label>
-          {isChanged && (
-            <button onClick={() => onChange(defaultVal)} title="Reset to country default"
-              className="text-[10px] text-slate-600 hover:text-amber-400 transition-colors">↺ reset</button>
-          )}
+          <button onClick={() => onChange(defaultVal)} title="Reset to country default"
+            className={`transition-colors ${isChanged ? 'text-amber-400 hover:text-amber-300' : 'text-slate-700 hover:text-slate-500 cursor-default pointer-events-none'}`}>
+            <RotateCcw className="w-3 h-3" />
+          </button>
         </div>
       )}
       <div className="relative">
@@ -486,12 +501,22 @@ function GlobeSection({ origin, destination, onCountryClick }) {
            g.polygonCapColor(f => f === hov ? 'rgba(59,130,246,0.35)' : 'rgba(255,255,255,0.03)');
          })
          .onPolygonClick(f => {
-           const iso      = f.properties.ISO_A2;
-           const adminName = f.properties.ADMIN || f.properties.NAME || '';
-           // Primary: ISO_A2 match; fallback: name match (handles France, Norway, etc. where ISO_A2='-99')
-           const country =
-             (iso && iso !== '-99' ? COUNTRIES.find(c => c.iso === iso) : null)
-             ?? COUNTRIES.find(c => c.name.toLowerCase() === adminName.toLowerCase());
+           const iso2  = f.properties.ISO_A2;
+           const iso2b = f.properties.ISO_A2_EH; // filled correctly even when ISO_A2 is '-99' (e.g. France, Norway)
+           const admin = (f.properties.ADMIN || f.properties.NAME || '').toLowerCase().trim();
+           const norm  = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+           // 1. Primary ISO_A2
+           let country = iso2 && iso2 !== '-99' ? COUNTRIES.find(c => c.iso === iso2) : null;
+           // 2. Secondary ISO_A2_EH (handles France iso2='-99', iso2b='FR')
+           if (!country && iso2b && iso2b !== '-99') country = COUNTRIES.find(c => c.iso === iso2b);
+           // 3. Exact ADMIN name
+           if (!country) country = COUNTRIES.find(c => c.name.toLowerCase() === admin);
+           // 4. Normalised contains match ("United States of America" ↔ "United States")
+           if (!country) {
+             const na = norm(admin);
+             country = COUNTRIES.find(c => { const nc = norm(c.name); return na.includes(nc) || nc.includes(na); });
+           }
            if (country) onCountryClick(country);
          });
       })
